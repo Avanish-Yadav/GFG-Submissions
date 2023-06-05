@@ -82,7 +82,10 @@ class Solution
     void deleteNode(Node *del)
     {
        // Your code here
-       *(del)=*(del->next);
+       Node* temp=del->next;
+       del->data=temp->data;
+       del->next=temp->next;
+       delete(temp);
     }
 
 };
