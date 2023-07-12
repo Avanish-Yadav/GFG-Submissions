@@ -6,7 +6,8 @@ using namespace std;
 class Solution{
   public:
     vector<int> duplicates(int arr[], int n) {
-    vector<int> nums;
+        // code here
+        vector<int> nums;
     unordered_map<int,int> mp;
     for(int i=0;i<n;i++){
         mp[arr[i]]++;
