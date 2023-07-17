@@ -29,21 +29,21 @@ int main() {
 
 
 string isSubset(int a1[], int a2[], int n, int m) {
-   sort(a1,a1+n);
-   sort(a2,a2+m);
-   int count=0;
-   for(int i=0,j=0;i<n;i++)
+   map<int,int> mp1;
+   map<int,int> mp2;
+   for(int i=0;i<n;i++)
    {
-       if(j<m){
-       if(a1[i]==a2[j]){
-       j++;
-       count++;
-       }
-      }
+       mp1[a1[i]]++;
    }
    
-   if(count==m)
-      return "Yes";
-    else
-      return "No";
+   for(int i=0;i<m;i++)
+   {
+       mp2[a2[i]]++;
+   }
+   for(auto it:mp2){
+       if(it.second>mp1[it.first])
+          return "No";
+       
+   }
+   return "Yes";
 }
